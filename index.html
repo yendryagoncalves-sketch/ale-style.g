@@ -558,22 +558,28 @@
     }
 
     /* SISTEMA ADMIN */
-    function loginAdminPrompt() {
-      const email = prompt("Correo de Administradora:");
-      if (email === "alestyle@gmail.com") {
-        const pass = prompt("Contraseña:");
-        if (pass === "1234") {
-          isAdmin = true;
-          document.getElementById('admin-panel').style.display = 'block';
-          renderCatalog();
-          alert("¡Sesión iniciada como Administradora!");
-        } else {
-          alert("Contraseña incorrecta.");
-        }
-      } else if (email !== null) {
-        alert("Correo no autorizado.");
+function loginAdminPrompt() {
+  const inputEmail = prompt("Correo de Administradora:");
+  
+  if (inputEmail !== null) {
+    const email = inputEmail.trim().toLowerCase();
+    
+    if (email === "alestyle@gmail.com") {
+      const pass = prompt("Contraseña:");
+      if (pass === "1234") {
+        isAdmin = true;
+        document.getElementById('admin-panel').style.display = 'block';
+        renderCatalog();
+        alert("¡Sesión iniciada como Administradora!");
+      } else {
+        alert("Contraseña incorrecta.");
       }
+    } else {
+      alert("Correo no autorizado.");
     }
+  }
+}
+
 
     function logoutAdmin() {
       isAdmin = false;
