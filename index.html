@@ -387,10 +387,10 @@
   </div>
 
   <script>
-    // VERSIÓN OFICIAL DEL CATÁLOGO (Cámbiala o sube el archivo para forzar actualización global)
-    const CATALOG_VERSION = "v3.1_2026";
+    // VERSIÓN DE CONTROL: Cambia este número (ej. v3.2) cuando quieras forzar que los clientes carguen nuevos cambios de fábrica.
+    const CATALOG_VERSION = "v3.2_2026";
 
-    // LISTA MAESTRA DE INVENTARIO OFICIAL CON PRECIOS Y TALLAS CORRECTAS
+    // LISTA MAESTRA OFICIAL DE INVENTARIO CON NOMBRES EXACTOS DE GITHUB
     const initialProducts = [
       { id: 'p1', title: 'Camisa Cuello Alto Amarillo', price: 20, sizes: ['S', 'M', 'L'], images: ['Camisa cuello alto amarillo.jpg', 'Camisa cuello alto amarillo (2).jpg'], soldOut: false },
       { id: 'p2', title: 'Camisa Espalda Descubierta', price: 20, sizes: ['S', 'M', 'L'], images: ['Camisa, espalda descubierta.jpg', 'Camisa, espalda descubierta (2).jpg'], soldOut: false },
@@ -423,9 +423,10 @@
       { id: 'p29', title: 'Tacones Rojos', price: 38, sizes: ['35', '36', '37', '38', '39'], images: ['tacones rojos.jpg'], soldOut: false }
     ];
 
-    // FORZAR ACTUALIZACIÓN SIEMPRE QUE CAMBIE LA VERSIÓN OFICIAL
+    // LÓGICA ROBUSTA DE GESTIÓN DE ESTADO LOCAL Y ADMIN
     const savedVersion = localStorage.getItem('alestyle_catalog_version');
     if (savedVersion !== CATALOG_VERSION) {
+      // Si cambia la versión oficial en el código, se actualiza el catálogo base de fábrica para todos
       localStorage.setItem('alestyle_products', JSON.stringify(initialProducts));
       localStorage.setItem('alestyle_catalog_version', CATALOG_VERSION);
     }
