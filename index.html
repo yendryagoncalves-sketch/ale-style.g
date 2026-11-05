@@ -377,7 +377,7 @@
       <label>Método de Entrega/Envío:</label>
       <select id="shipping-type">
         <option value="Entrega Personal">Entrega Personal</option>
-        <option value="Delivery Los Teques / Caracas">Delivery (Los Teques)</option>
+        <option value="Delivery Los Teques / Caracas">Delivery (Los Teques / Caracas)</option>
         <option value="Envío Nacional (MRW/Zoom)">Envío Nacional (MRW/Zoom)</option>
       </select>
 
@@ -387,43 +387,43 @@
   </div>
 
   <script>
-    // IDENTIFICADOR DE VERSIÓN DEL CATÁLOGO
-    const CATALOG_VERSION = "v2.0_2026";
+    // VERSIÓN OFICIAL DEL CATÁLOGO (Cámbiala o sube el archivo para forzar actualización global)
+    const CATALOG_VERSION = "v3.1_2026";
 
-    // LISTA DE INVENTARIO INICIAL
+    // LISTA MAESTRA DE INVENTARIO OFICIAL CON PRECIOS Y TALLAS CORRECTAS
     const initialProducts = [
-      { id: 'p1', title: 'Camisa Cuello Alto Amarillo', price: 20, sizes: ['M'], images: ['Camisa cuello alto amarillo.jpg', 'Camisa cuello alto amarillo (2).jpg'], soldOut: false },
-      { id: 'p2', title: 'Camisa Espalda Descubierta', price: 20, sizes: ['S'], images: ['Camisa, espalda descubierta.jpg', 'Camisa, espalda descubierta (2).jpg'], soldOut: false },
-      { id: 'p3', title: 'Conjunto Bikini Puntos', price: 21, sizes: ['S'], images: ['Bikini Puntos.jpg', 'Bikini Puntos (2).jpg'], soldOut: false },
-      { id: 'p4', title: 'Chaqueta Color Vino', price: 35, sizes: ['S'], images: ['Chaqueta Vino.jpg', 'Chaqueta Vino (2).jpg'], soldOut: false },
-      { id: 'p5', title: 'Chaqueta Animal Print', price: 20, sizes: ['S'], images: ['Chaqueta animal print.jpg'], soldOut: false },
-      { id: 'p6', title: 'Conjunto de Rayas Corto', price: 26, sizes: ['S'], images: ['Conjunto de rayas corto.jpg', 'Conjunto de rayas corto (2).jpg'], soldOut: false },
-      { id: 'p7', title: 'Conjunto de Rayas Largo', price: 30, sizes: ['M'], images: ['Conjunto de rayas largo.jpg', 'Conjunto de rayas largo(2).jpg'], soldOut: false },
-      { id: 'p8', title: 'Conjunto Deportivo Rosa', price: 30, sizes: ['M'], images: ['conjunto deportivo rosa.jpg', 'conjunto deportivo rosa (2).jpg'], soldOut: false },
-      { id: 'p9', title: 'Conjunto Deportivo', price: 28, sizes: ['S'], images: ['Conjunto Deportivo.jpg'], soldOut: false },
-      { id: 'p10', title: 'Conjunto Verano Rosa', price: 23, sizes: ['S'], images: ['Conjunto Verano Rosa.jpg', 'Conjunto Verano Rosa (2).jpg'], soldOut: false },
-      { id: 'p11', title: 'Pijama Rosa Satin a Rayas', price: 25, sizes: ['S'], images: ['Pijama rayas.jpg', 'Pijama rayas (2).jpg'], soldOut: false },
-      { id: 'p12', title: 'Pijama Rosa', price: 25, sizes: ['M'], images: ['Pijama.jpg', 'Pijama (2).jpg'], soldOut: false },
-      { id: 'p13', title: 'Vestido Verano Amarillo', price: 27, sizes: ['S'], images: ['Verano Amarillo.jpg', 'Verano Amarillo (2).jpg'], soldOut: false },
-      { id: 'p14', title: 'Vestido Verano Rojo', price: 26, sizes: ['M'], images: ['Verano Rojo.jpg', 'Verano Rojo (2).jpg'], soldOut: false },
-      { id: 'p15', title: 'Vestido Escote V Amarillo', price: 28, sizes: ['S'], images: ['Vestido escote V amarillo.jpg', 'Vestido escote V amarillo (2).jpg'], soldOut: false },
-      { id: 'p16', title: 'Vestido Largo Marrón', price: 30, sizes: ['S'], images: ['Vestido Largo Marron.jpg', 'Vestido Largo Marron (2).jpg'], soldOut: false },
-      { id: 'p17', title: 'Blusa Globo', price: 20, sizes: ['M'], images: ['blusa globo.jpg', 'blusa globo (2).jpg'], soldOut: false },
+      { id: 'p1', title: 'Camisa Cuello Alto Amarillo', price: 20, sizes: ['S', 'M', 'L'], images: ['Camisa cuello alto amarillo.jpg', 'Camisa cuello alto amarillo (2).jpg'], soldOut: false },
+      { id: 'p2', title: 'Camisa Espalda Descubierta', price: 20, sizes: ['S', 'M', 'L'], images: ['Camisa, espalda descubierta.jpg', 'Camisa, espalda descubierta (2).jpg'], soldOut: false },
+      { id: 'p3', title: 'Conjunto Bikini Puntos', price: 21, sizes: ['S', 'M'], images: ['Bikini Puntos.jpg', 'Bikini Puntos (2).jpg'], soldOut: false },
+      { id: 'p4', title: 'Chaqueta Color Vino', price: 35, sizes: ['S', 'M', 'L'], images: ['Chaqueta Vino.jpg', 'Chaqueta Vino (2).jpg'], soldOut: false },
+      { id: 'p5', title: 'Chaqueta Animal Print', price: 20, sizes: ['S', 'M'], images: ['Chaqueta animal print.jpg'], soldOut: false },
+      { id: 'p6', title: 'Conjunto de Rayas Corto', price: 26, sizes: ['S', 'M', 'L'], images: ['Conjunto de rayas corto.jpg', 'Conjunto de rayas corto (2).jpg'], soldOut: false },
+      { id: 'p7', title: 'Conjunto de Rayas Largo', price: 30, sizes: ['S', 'M', 'L'], images: ['Conjunto de rayas largo.jpg', 'Conjunto de rayas largo(2).jpg'], soldOut: false },
+      { id: 'p8', title: 'Conjunto Deportivo Rosa', price: 30, sizes: ['S', 'M'], images: ['conjunto deportivo rosa.jpg', 'conjunto deportivo rosa (2).jpg'], soldOut: false },
+      { id: 'p9', title: 'Conjunto Deportivo', price: 28, sizes: ['S', 'M', 'L'], images: ['Conjunto Deportivo.jpg'], soldOut: false },
+      { id: 'p10', title: 'Conjunto Verano Rosa', price: 23, sizes: ['S', 'M'], images: ['Conjunto Verano Rosa.jpg', 'Conjunto Verano Rosa (2).jpg'], soldOut: false },
+      { id: 'p11', title: 'Pijama Rosa Satin a Rayas', price: 25, sizes: ['S', 'M', 'L'], images: ['Pijama rayas.jpg', 'Pijama rayas (2).jpg'], soldOut: false },
+      { id: 'p12', title: 'Pijama Rosa', price: 25, sizes: ['S', 'M'], images: ['Pijama.jpg', 'Pijama (2).jpg'], soldOut: false },
+      { id: 'p13', title: 'Vestido Verano Amarillo', price: 27, sizes: ['S', 'M'], images: ['Verano Amarillo.jpg', 'Verano Amarillo (2).jpg'], soldOut: false },
+      { id: 'p14', title: 'Vestido Verano Rojo', price: 26, sizes: ['S', 'M', 'L'], images: ['Verano Rojo.jpg', 'Verano Rojo (2).jpg'], soldOut: false },
+      { id: 'p15', title: 'Vestido Escote V Amarillo', price: 28, sizes: ['S', 'M'], images: ['Vestido escote V amarillo.jpg', 'Vestido escote V amarillo (2).jpg'], soldOut: false },
+      { id: 'p16', title: 'Vestido Largo Marrón', price: 30, sizes: ['S', 'M', 'L'], images: ['Vestido Largo Marron.jpg', 'Vestido Largo Marron (2).jpg'], soldOut: false },
+      { id: 'p17', title: 'Blusa Globo', price: 20, sizes: ['S', 'M', 'L'], images: ['blusa globo.jpg', 'blusa globo (2).jpg'], soldOut: false },
       { id: 'p18', title: 'Conjunto Deportivo Amarillo', price: 28, sizes: ['S', 'M', 'L'], images: ['conjunto deportivo amarillo (1).jpg', 'conjunto deportivo amarillo (2).jpg'], soldOut: false },
-      { id: 'p19', title: 'Conjunto Deportivo Animal Print', price: 18, sizes: ['M'], images: ['conjunto deportivo animal print.jpg', 'conjunto deportivo animal print (2).jpg'], soldOut: false },
-      { id: 'p20', title: 'Conjunto Deportivo Azul', price: 20, sizes: ['M'], images: ['conjunto deportivo azul.jpg', 'conjunto deportivo azul (2).jpg'], soldOut: false },
-      { id: 'p21', title: 'Corset Rojo', price: 25, sizes: ['M'], images: ['corset rojo.jpg', 'corset rojo (2).jpg'], soldOut: false },
-      { id: 'p22', title: 'Pantalón Animal Print', price: 32, sizes: ['M'], images: ['pantalon animal print.jpg', 'pantalon animal print (2).jpg'], soldOut: false },
-      { id: 'p23', title: 'Short Animal Print', price: 22, sizes: ['M'], images: ['short animal print.jpg'], soldOut: false },
+      { id: 'p19', title: 'Conjunto Deportivo Animal Print', price: 18, sizes: ['S', 'M'], images: ['conjunto deportivo animal print.jpg', 'conjunto deportivo animal print (2).jpg'], soldOut: false },
+      { id: 'p20', title: 'Conjunto Deportivo Azul', price: 20, sizes: ['S', 'M', 'L'], images: ['conjunto deportivo azul.jpg', 'conjunto deportivo azul (2).jpg'], soldOut: false },
+      { id: 'p21', title: 'Corset Rojo', price: 25, sizes: ['S', 'M'], images: ['corset rojo.jpg', 'corset rojo (2).jpg'], soldOut: false },
+      { id: 'p22', title: 'Pantalón Animal Print', price: 32, sizes: ['S', 'M', 'L'], images: ['pantalon animal print.jpg', 'pantalon animal print (2).jpg'], soldOut: false },
+      { id: 'p23', title: 'Short Animal Print', price: 22, sizes: ['S', 'M'], images: ['short animal print.jpg'], soldOut: false },
       { id: 'p24', title: 'Traje de Baño Enterizo', price: 22, sizes: ['S', 'M'], images: ['traje de baño.jpg'], soldOut: false },
-      { id: 'p25', title: 'Traje de Baño Rosa', price: 18, sizes: ['M'], images: ['traje de baño rosa.jpg'], soldOut: false },
+      { id: 'p25', title: 'Traje de Baño Rosa', price: 18, sizes: ['S', 'M'], images: ['traje de baño rosa.jpg'], soldOut: false },
       { id: 'p26', title: 'Bálsamo Labial / Accesorio', price: 8, sizes: ['Única'], images: ['balsamo.jpg'], soldOut: false },
       { id: 'p27', title: 'Lentes de Sol', price: 8, sizes: ['Única'], images: ['lentes.jpg'], soldOut: false },
-      { id: 'p28', title: 'Tacones Blancos', price: 38, sizes: ['37', '39'], images: ['tacones blanco.jpg'], soldOut: false },
-      { id: 'p29', title: 'Tacones Rojos', price: 38, sizes: ['38'], images: ['tacones rojos.jpg'], soldOut: false }
+      { id: 'p28', title: 'Tacones Blancos', price: 38, sizes: ['35', '36', '37', '38', '39'], images: ['tacones blanco.jpg'], soldOut: false },
+      { id: 'p29', title: 'Tacones Rojos', price: 38, sizes: ['35', '36', '37', '38', '39'], images: ['tacones rojos.jpg'], soldOut: false }
     ];
 
-    // SINCRONIZACIÓN AUTOMÁTICA DE MEMORIA LOCAL
+    // FORZAR ACTUALIZACIÓN SIEMPRE QUE CAMBIE LA VERSIÓN OFICIAL
     const savedVersion = localStorage.getItem('alestyle_catalog_version');
     if (savedVersion !== CATALOG_VERSION) {
       localStorage.setItem('alestyle_products', JSON.stringify(initialProducts));
@@ -437,7 +437,6 @@
 
     function saveProducts() {
       localStorage.setItem('alestyle_products', JSON.stringify(products));
-      localStorage.setItem('alestyle_catalog_version', 'custom_' + Date.now());
     }
 
     function renderCatalog() {
@@ -580,7 +579,7 @@
       window.open(url, '_blank');
     }
 
-    /* SISTEMA ADMIN Y EDICIÓN EN VIVO */
+    /* SISTEMA ADMIN */
     function loginAdminPrompt() {
       const inputEmail = prompt("Correo de Administradora:");
       
@@ -684,5 +683,6 @@
     renderCatalog();
   </script>
 </body>
+</html>
 </html>
 </html>
