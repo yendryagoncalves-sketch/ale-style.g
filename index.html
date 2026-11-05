@@ -2,16 +2,15 @@
 <html lang="es">
 <head>
   <!-- Título de la pestaña del navegador -->
-<title>Catálogo Ale_style.g</title>
+  <title>Catálogo Ale_style.g</title>
 
-<!-- Vista previa para WhatsApp y redes sociales -->
-<meta property="og:title" content="Catálogo Oficial | Ale_style.g" />
-<meta property="og:description" content="Explora nuestro catálogo de ropa y realiza tu pedido directamente por WhatsApp." />
-<meta property="og:type" content="website" />
+  <!-- Vista previa para WhatsApp y redes sociales -->
+  <meta property="og:title" content="Catálogo Oficial | Ale_style.g" />
+  <meta property="og:description" content="Explora nuestro catálogo de ropa y realiza tu pedido directamente por WhatsApp." />
+  <meta property="og:type" content="website" />
   <meta charset="UTF-8">
   <meta property="og:image" content="https://yendryagoncalves-sketch.github.io/ale-style.g/logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ale_style.g - Catálogo Oficial</title>
   <style>
     :root {
       --primary: #d81b60;
@@ -388,6 +387,9 @@
   </div>
 
   <script>
+    // IDENTIFICADOR DE VERSIÓN DEL CATÁLOGO
+    const CATALOG_VERSION = "v2.0_2026";
+
     // LISTA DE INVENTARIO INICIAL
     const initialProducts = [
       { id: 'p1', title: 'Camisa Cuello Alto Amarillo', price: 20, sizes: ['S', 'M', 'L'], images: ['Camisa cuello alto amarillo.jpg', 'Camisa cuello alto amarillo (2).jpg'], soldOut: false },
@@ -398,15 +400,35 @@
       { id: 'p6', title: 'Conjunto de Rayas Corto', price: 26, sizes: ['S', 'M', 'L'], images: ['Conjunto de rayas corto.jpg', 'Conjunto de rayas corto (2).jpg'], soldOut: false },
       { id: 'p7', title: 'Conjunto de Rayas Largo', price: 30, sizes: ['S', 'M', 'L'], images: ['Conjunto de rayas largo.jpg', 'Conjunto de rayas largo(2).jpg'], soldOut: false },
       { id: 'p8', title: 'Conjunto Deportivo Rosa', price: 28, sizes: ['S', 'M'], images: ['conjunto deportivo rosa.jpg', 'conjunto deportivo rosa (2).jpg'], soldOut: false },
-     { id: 'p9', title: 'Conjunto Deportivo', price: 28, sizes: ['S', 'M', 'L'], images: ['Conjunto Deportivo.jpg'], soldOut: false },
+      { id: 'p9', title: 'Conjunto Deportivo', price: 28, sizes: ['S', 'M', 'L'], images: ['Conjunto Deportivo.jpg'], soldOut: false },
       { id: 'p10', title: 'Conjunto Verano Rosa', price: 25, sizes: ['S', 'M'], images: ['Conjunto Verano Rosa.jpg', 'Conjunto Verano Rosa (2).jpg'], soldOut: false },
       { id: 'p11', title: 'Pijama Rosa Satin a Rayas', price: 25, sizes: ['S', 'M', 'L'], images: ['Pijama rayas.jpg', 'Pijama rayas (2).jpg'], soldOut: false },
       { id: 'p12', title: 'Pijama Rosa', price: 24, sizes: ['S', 'M'], images: ['Pijama.jpg', 'Pijama (2).jpg'], soldOut: false },
       { id: 'p13', title: 'Vestido Verano Amarillo', price: 27, sizes: ['S', 'M'], images: ['Verano Amarillo.jpg', 'Verano Amarillo (2).jpg'], soldOut: false },
       { id: 'p14', title: 'Vestido Verano Rojo', price: 27, sizes: ['S', 'M', 'L'], images: ['Verano Rojo.jpg', 'Verano Rojo (2).jpg'], soldOut: false },
       { id: 'p15', title: 'Vestido Escote V Amarillo', price: 28, sizes: ['S', 'M'], images: ['Vestido escote V amarillo.jpg', 'Vestido escote V amarillo (2).jpg'], soldOut: false },
-      { id: 'p16', title: 'Vestido Largo Marrón', price: 32, sizes: ['S', 'M', 'L'], images: ['Vestido Largo Marron.jpg', 'Vestido Largo Marron (2).jpg'], soldOut: false }
+      { id: 'p16', title: 'Vestido Largo Marrón', price: 32, sizes: ['S', 'M', 'L'], images: ['Vestido Largo Marron.jpg', 'Vestido Largo Marron (2).jpg'], soldOut: false },
+      { id: 'p17', title: 'Blusa Globo', price: 22, sizes: ['S', 'M', 'L'], images: ['blusa globo.jpg', 'blusa globo (2).jpg'], soldOut: false },
+      { id: 'p18', title: 'Conjunto Deportivo Amarillo', price: 28, sizes: ['S', 'M', 'L'], images: ['conjunto deportivo amarillo (1).jpg', 'conjunto deportivo amarillo (2).jpg'], soldOut: false },
+      { id: 'p19', title: 'Conjunto Deportivo Animal Print', price: 29, sizes: ['S', 'M'], images: ['conjunto deportivo animal print.jpg', 'conjunto deportivo animal print (2).jpg'], soldOut: false },
+      { id: 'p20', title: 'Conjunto Deportivo Azul', price: 28, sizes: ['S', 'M', 'L'], images: ['conjunto deportivo azul.jpg', 'conjunto deportivo azul (2).jpg'], soldOut: false },
+      { id: 'p21', title: 'Corset Rojo', price: 24, sizes: ['S', 'M'], images: ['corset rojo.jpg', 'corset rojo (2).jpg'], soldOut: false },
+      { id: 'p22', title: 'Pantalón Animal Print', price: 30, sizes: ['S', 'M', 'L'], images: ['pantalon animal print.jpg', 'pantalon animal print (2).jpg'], soldOut: false },
+      { id: 'p23', title: 'Short Animal Print', price: 20, sizes: ['S', 'M'], images: ['short animal print.jpg'], soldOut: false },
+      { id: 'p24', title: 'Traje de Baño Enterizo', price: 22, sizes: ['S', 'M'], images: ['traje de baño.jpg'], soldOut: false },
+      { id: 'p25', title: 'Traje de Baño Rosa', price: 22, sizes: ['S', 'M'], images: ['traje de baño rosa.jpg'], soldOut: false },
+      { id: 'p26', title: 'Bálsamo Labial / Accesorio', price: 10, sizes: ['Única'], images: ['balsamo.jpg'], soldOut: false },
+      { id: 'p27', title: 'Lentes de Sol', price: 15, sizes: ['Única'], images: ['lentes.jpg'], soldOut: false },
+      { id: 'p28', title: 'Tacones Blancos', price: 38, sizes: ['35', '36', '37', '38', '39'], images: ['tacones blanco.jpg'], soldOut: false },
+      { id: 'p29', title: 'Tacones Rojos', price: 38, sizes: ['35', '36', '37', '38', '39'], images: ['tacones rojos.jpg'], soldOut: false }
     ];
+
+    // SINCRONIZACIÓN AUTOMÁTICA DE MEMORIA LOCAL
+    const savedVersion = localStorage.getItem('alestyle_catalog_version');
+    if (savedVersion !== CATALOG_VERSION) {
+      localStorage.setItem('alestyle_products', JSON.stringify(initialProducts));
+      localStorage.setItem('alestyle_catalog_version', CATALOG_VERSION);
+    }
 
     let products = JSON.parse(localStorage.getItem('alestyle_products')) || initialProducts;
     let isAdmin = false;
@@ -415,6 +437,7 @@
 
     function saveProducts() {
       localStorage.setItem('alestyle_products', JSON.stringify(products));
+      localStorage.setItem('alestyle_catalog_version', 'custom_' + Date.now());
     }
 
     function renderCatalog() {
@@ -557,29 +580,28 @@
       window.open(url, '_blank');
     }
 
-    /* SISTEMA ADMIN */
-function loginAdminPrompt() {
-  const inputEmail = prompt("Correo de Administradora:");
-  
-  if (inputEmail !== null) {
-    const email = inputEmail.trim().toLowerCase();
-    
-    if (email === "alestyle@gmail.com") {
-      const pass = prompt("Contraseña:");
-      if (pass === "1234") {
-        isAdmin = true;
-        document.getElementById('admin-panel').style.display = 'block';
-        renderCatalog();
-        alert("¡Sesión iniciada como Administradora!");
-      } else {
-        alert("Contraseña incorrecta.");
+    /* SISTEMA ADMIN Y EDICIÓN EN VIVO */
+    function loginAdminPrompt() {
+      const inputEmail = prompt("Correo de Administradora:");
+      
+      if (inputEmail !== null) {
+        const email = inputEmail.trim().toLowerCase();
+        
+        if (email === "alestyle@gmail.com") {
+          const pass = prompt("Contraseña:");
+          if (pass === "1234") {
+            isAdmin = true;
+            document.getElementById('admin-panel').style.display = 'block';
+            renderCatalog();
+            alert("¡Sesión iniciada como Administradora!");
+          } else {
+            alert("Contraseña incorrecta.");
+          }
+        } else {
+          alert("Correo no autorizado.");
+        }
       }
-    } else {
-      alert("Correo no autorizado.");
     }
-  }
-}
-
 
     function logoutAdmin() {
       isAdmin = false;
@@ -662,4 +684,5 @@ function loginAdminPrompt() {
     renderCatalog();
   </script>
 </body>
+</html>
 </html>
