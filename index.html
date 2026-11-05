@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Título de la pestaña del navegador -->
   <title>Catálogo Ale_style.g</title>
-
-  <!-- Vista previa para WhatsApp y redes sociales -->
   <meta property="og:title" content="Catálogo Oficial | Ale_style.g" />
   <meta property="og:description" content="Explora nuestro catálogo de ropa y realiza tu pedido directamente por WhatsApp." />
   <meta property="og:type" content="website" />
@@ -33,7 +30,6 @@
       padding-bottom: 120px;
     }
 
-    /* HEADER BANNER */
     .header-banner {
       background: linear-gradient(135deg, #d81b60, #ad1457);
       color: white;
@@ -71,7 +67,6 @@
       padding: 15px;
     }
 
-    /* GRID DE PRODUCTOS */
     .product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
@@ -88,7 +83,6 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      transition: transform 0.2s;
     }
 
     .product-card.out-of-stock {
@@ -109,7 +103,6 @@
       z-index: 10;
     }
 
-    /* GALERÍA DE IMÁGENES */
     .img-container {
       width: 100%;
       height: 340px;
@@ -207,7 +200,6 @@
       cursor: pointer;
       width: 100%;
       margin-top: 5px;
-      transition: background 0.2s;
     }
 
     .btn-add:disabled {
@@ -215,7 +207,6 @@
       cursor: not-allowed;
     }
 
-    /* BARRA CARRITO INFERIOR */
     .cart-bar {
       position: fixed;
       bottom: 0;
@@ -242,7 +233,6 @@
       font-size: 0.95rem;
     }
 
-    /* MODAL DE PEDIDO */
     .modal {
       display: none;
       position: fixed;
@@ -270,7 +260,6 @@
       border-radius: 6px;
     }
 
-    /* PANEL DE ADMINISTRADORA */
     .admin-panel {
       display: none;
       background: #fff0f5;
@@ -324,7 +313,6 @@
 </head>
 <body>
 
-  <!-- CABECERA -->
   <header class="header-banner">
     <h1>ale_style.g</h1>
     <p>"No podrás comprar la felicidad, PERO sí el outfit para esa ocasión especial"</p>
@@ -336,28 +324,23 @@
   </header>
 
   <div class="container">
-
-    <!-- PANEL ADMIN DESPLEGABLE -->
     <div class="admin-panel" id="admin-panel">
-      <h3>⚙️ Panel de Gestión de Inventario (Solo Administradora)</h3>
+      <h3>⚙️ Panel de Control de Inventario</h3>
       <div class="admin-form">
-        <input type="text" id="new-title" placeholder="Nombre de prenda (ej: Body Negro)">
+        <input type="text" id="new-title" placeholder="Nombre de prenda">
         <input type="number" id="new-price" placeholder="Precio ($)">
-        <input type="text" id="new-sizes" placeholder="Tallas separadas por coma (ej: S, M, L)">
-        <input type="text" id="new-img1" placeholder="Nombre foto 1 (ej: body.jpg)">
-        <input type="text" id="new-img2" placeholder="Nombre foto 2 (Opcional, ej: body2.jpg)">
+        <input type="text" id="new-sizes" placeholder="Tallas (ej: S, M, L)">
+        <input type="text" id="new-img1" placeholder="Foto 1 (ej: blusa.jpg)">
+        <input type="text" id="new-img2" placeholder="Foto 2 opcional">
       </div>
-      <button class="btn-add" style="background:#28a745;" onclick="addNewProduct()">➕ Agregar Nueva Prenda</button>
+      <button class="btn-add" style="background:#28a745;" onclick="addNewProduct()">➕ Agregar Prenda al Código</button>
       <button class="btn-add" style="background:#6c757d; margin-top: 6px;" onclick="logoutAdmin()">Cerrar Sesión Admin</button>
     </div>
 
-    <!-- GRID DE PRODUCTOS -->
     <div class="product-grid" id="product-grid"></div>
-
     <button class="admin-toggle-link" onclick="loginAdminPrompt()">🔒 Acceso Administradora</button>
   </div>
 
-  <!-- BARRA CARRITO -->
   <div class="cart-bar">
     <div>
       <strong>Total: $<span id="cart-total">0.00</span></strong>
@@ -366,32 +349,25 @@
     <button class="cart-btn" onclick="openCheckout()">Ver Pedido 🛒</button>
   </div>
 
-  <!-- MODAL CHECKOUT -->
   <div class="modal" id="checkout-modal">
     <div class="modal-content">
       <h3 style="color:var(--primary); margin-bottom:10px;">✨ Confirmar Pedido ✨</h3>
-      
       <label>Tu Nombre y Apellido:</label>
       <input type="text" id="client-name" placeholder="Ej: Alejandra Goncalves">
-      
       <label>Método de Entrega/Envío:</label>
       <select id="shipping-type">
         <option value="Entrega Personal">Entrega Personal</option>
         <option value="Delivery Los Teques / Caracas">Delivery (Los Teques / Caracas)</option>
         <option value="Envío Nacional (MRW/Zoom)">Envío Nacional (MRW/Zoom)</option>
       </select>
-
       <button class="btn-add" style="background:#25d366; margin-top:10px;" onclick="sendWhatsApp()">Enviar Pedido por WhatsApp 📲</button>
       <button style="background:#ccc; border:none; padding:8px; width:100%; border-radius:5px; margin-top:8px; cursor:pointer;" onclick="closeCheckout()">Volver</button>
     </div>
   </div>
 
   <script>
-    // VERSIÓN DE CONTROL: Cambia este número (ej. v3.2) cuando quieras forzar que los clientes carguen nuevos cambios de fábrica.
-    const CATALOG_VERSION = "v3.2_2026";
-
-    // LISTA MAESTRA OFICIAL DE INVENTARIO CON NOMBRES EXACTOS DE GITHUB
-    const initialProducts = [
+    // LISTA OFICIAL DIRECTA (Sin enredos de memoria local, los cambios se quedan fijos aquí)
+    let products = [
       { id: 'p1', title: 'Camisa Cuello Alto Amarillo', price: 20, sizes: ['S', 'M', 'L'], images: ['Camisa cuello alto amarillo.jpg', 'Camisa cuello alto amarillo (2).jpg'], soldOut: false },
       { id: 'p2', title: 'Camisa Espalda Descubierta', price: 20, sizes: ['S', 'M', 'L'], images: ['Camisa, espalda descubierta.jpg', 'Camisa, espalda descubierta (2).jpg'], soldOut: false },
       { id: 'p3', title: 'Conjunto Bikini Puntos', price: 21, sizes: ['S', 'M'], images: ['Bikini Puntos.jpg', 'Bikini Puntos (2).jpg'], soldOut: false },
@@ -423,22 +399,9 @@
       { id: 'p29', title: 'Tacones Rojos', price: 38, sizes: ['35', '36', '37', '38', '39'], images: ['tacones rojos.jpg'], soldOut: false }
     ];
 
-    // LÓGICA ROBUSTA DE GESTIÓN DE ESTADO LOCAL Y ADMIN
-    const savedVersion = localStorage.getItem('alestyle_catalog_version');
-    if (savedVersion !== CATALOG_VERSION) {
-      // Si cambia la versión oficial en el código, se actualiza el catálogo base de fábrica para todos
-      localStorage.setItem('alestyle_products', JSON.stringify(initialProducts));
-      localStorage.setItem('alestyle_catalog_version', CATALOG_VERSION);
-    }
-
-    let products = JSON.parse(localStorage.getItem('alestyle_products')) || initialProducts;
     let isAdmin = false;
     let cart = [];
     let selectedSizes = {};
-
-    function saveProducts() {
-      localStorage.setItem('alestyle_products', JSON.stringify(products));
-    }
 
     function renderCatalog() {
       const grid = document.getElementById('product-grid');
@@ -580,13 +543,10 @@
       window.open(url, '_blank');
     }
 
-    /* SISTEMA ADMIN */
     function loginAdminPrompt() {
       const inputEmail = prompt("Correo de Administradora:");
-      
       if (inputEmail !== null) {
         const email = inputEmail.trim().toLowerCase();
-        
         if (email === "alestyle@gmail.com") {
           const pass = prompt("Contraseña:");
           if (pass === "1234") {
@@ -617,7 +577,7 @@
       const img2 = document.getElementById('new-img2').value.trim();
 
       if (!title || isNaN(price) || !sizesStr || !img1) {
-        alert("Por favor completa los campos requeridos (Nombre, Precio, Tallas e Imagen 1).");
+        alert("Por favor completa los campos requeridos.");
         return;
       }
 
@@ -634,22 +594,14 @@
       };
 
       products.push(newP);
-      saveProducts();
       renderCatalog();
-      alert("¡Prenda agregada al catálogo!");
-
-      document.getElementById('new-title').value = '';
-      document.getElementById('new-price').value = '';
-      document.getElementById('new-sizes').value = '';
-      document.getElementById('new-img1').value = '';
-      document.getElementById('new-img2').value = '';
+      alert("¡Prenda agregada!");
     }
 
     function updatePrice(id, val) {
       const p = products.find(x => x.id === id);
       if (p) {
         p.price = parseFloat(val) || 0;
-        saveProducts();
         renderCatalog();
       }
     }
@@ -658,7 +610,6 @@
       const p = products.find(x => x.id === id);
       if (p) {
         p.sizes = val.split(',').map(s => s.trim().toUpperCase());
-        saveProducts();
         renderCatalog();
       }
     }
@@ -667,21 +618,20 @@
       const p = products.find(x => x.id === id);
       if (p) {
         p.soldOut = !p.soldOut;
-        saveProducts();
         renderCatalog();
       }
     }
 
     function deleteProduct(id) {
-      if (confirm("¿Estás segura de eliminar esta prenda del catálogo?")) {
+      if (confirm("¿Estás segura de eliminar esta prenda?")) {
         products = products.filter(x => x.id !== id);
-        saveProducts();
         renderCatalog();
       }
     }
 
-    // CARGA INICIAL
     renderCatalog();
   </script>
+</body>
+</html>
 </body>
 </html>
